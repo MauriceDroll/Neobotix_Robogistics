@@ -1,0 +1,4 @@
+Notizen:
+
+UR Tutorial für ROS connection: https://docs.ros.org/en/ros2_packages/humble/api/ur_robot_driver/installation/robot_setup.html
+UR ROS2 driver package: https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/humble
