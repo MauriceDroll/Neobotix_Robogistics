@@ -25,6 +25,7 @@
 8) connect another terminal to the container --> 5)
 9) run the python script you have written your application in: ```ros2 run robot_application <program-name>```
 
+--> for more informations on how to write python applications please refer here: [application-tutorial for diy-robotics](https://github.com/RobinWolf/diy_robot_application/tree/main)
 
 ### ToDo:
 - modify robot_description URDF with neobotix, camera-mount, camera and gripper --> self-collision checking, URDF package is implemented as launch argument!
