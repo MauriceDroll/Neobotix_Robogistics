@@ -18,9 +18,9 @@
 1) start the docker container (ur.driver.humble) with ```./start.sh```
 2) build the ros2_ws (in specific the robot_application package) with ```colcon build``` 
 3) source the ros2_ws with ```source install/setup.bash``` (note: the dependencies are built and sourced automatically while building the container)
-4) start the drivers: ```ros2 launch ????????????????????????? ur_type:=ur5 launch_rviz:=false```
-5) start the remote control on the UR teachpanel and put the speed-slider bar to 100% because the trajectory execution in ros is calculated on this base and speed reduction isnt possible
-6) connect anonter terminal to the container: ```docker exec -it ur-driver-humble bash``` and source it
+4) start the drivers: ```ros2 launch ur_robot_driver ur_type:=ur5 robot_ip:=192.168.1.103 launch_rviz:=false```
+5) start the remote control (program = "external_control") on the UR teachpanel and put the speed-slider bar to 100% because the trajectory execution in ros is calculated on this base and speed reduction isnt possible
+6) connect anonther terminal to the container: ```docker exec -it ur-driver-humble bash``` and source it
 7) launch moveit and the wrapper: ```ros2 launch moveit_wrapper wrapper_complete.launch.py ur_type:=ur5``` (note: launch_rviz:=true by default)
 8) connect another terminal to the container --> 5)
 9) run the python script you have written your application in: ```ros2 run robot_application <program-name>```
