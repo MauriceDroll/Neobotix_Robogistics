@@ -1,0 +1,215 @@
+<root main_tree_to_execute = "NavTest">
+    <BehaviorTree ID="NavTest">
+        <Sequence>
+            <!-- Nullpunkt-->
+            <!-- <Action ID="BaseMovement" x="0" y="0"/> -->
+
+
+            <!-- #################### Storage 9 Pick-Up #################### -->
+            <!-- Move arm to Home -->
+            <!-- TODO Change to MoveToJoint -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Drive in front of rack -->
+            <!-- <Action ID="SoundPlay" file_name="They_see_me_rollin.wav"/> -->
+            <!-- <Action ID="BaseMovement" x="-0.17" y="0.134" quaternion_x="0" quaternion_y="0" quaternion_z="0.0" quaternion_w="1.0"/> -->
+            <!-- <Action ID="BaseMovement" x="0.12" y="0.05" quaternion_x="0" quaternion_y="0" quaternion_z="-0.679068928994617" quaternion_w="0.7340745123446963"/> -->
+            <!-- Move arm in camera pose -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.55" z="0.84" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            
+            <!-- <RetryUntilSuccessful num_attempts="1"> -->
+                <!-- <Sequence> -->
+                    <!-- Calculate marker position -->
+                    <!-- <Wait seconds="1"/> -->
+                    <!-- <Action ID="GetBoxPickPosition" marker_frame="marker_1" x="{x}" y="{y}" z="{z}" rotation_x="{rotation_x}" rotation_y="{rotation_y}" rotation_z="{rotation_z}"/> -->
+                <!-- </Sequence> -->
+            <!-- </RetryUntilSuccessful> -->
+
+            <!-- Move 20 cm in front of box -->
+            <!-- <Action ID="CalculateOffsets" offset_x="0.105" offset_y="-0.10" offset_z="-0.02"  x="{x}" y="{y}" z="{z}" out_x="{out_x}" out_y="{out_y}" out_z="{out_z}"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="{out_x}" y="0.6" z="{out_z}" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Prepick -->
+            <!-- <Action ID="CalculateOffsets" offset_x="0.105" offset_y="0.02" offset_z="-0.02"  x="{x}" y="{y}" z="{z}" out_x="{out_x}" out_y="{out_y}" out_z="{out_z}"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="{out_x}" y="{out_y}" z="{out_z}" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Pick -->
+            <!-- <Action ID="SoundPlay" file_name="Rittersport.wav"/> -->
+            <!-- <Action ID="CalculateOffsets" offset_x="0.105" offset_y="0.02" offset_z="0.05"  x="{x}" y="{y}" z="{z}" out_x="{out_x}" out_y="{out_y}" out_z="{out_z}"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="{out_x}" y="{out_y}" z="{out_z}" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Move Out -->
+            <!-- <Action ID="CalculateOffsets" offset_x="0.105" offset_y="-0.20" offset_z="0.05"  x="{x}" y="{y}" z="{z}" out_x="{out_x}" out_y="{out_y}" out_z="{out_z}"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="{out_x}" y="{out_y}" z="{out_z}" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Home -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/>             -->
+            <!-- #################### END Storage 9 Pick-Up #################### -->
+           
+            <!-- #################### Place Box on Robot #################### -->
+            <!-- Home Left of Robot -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Pre Home in front of robot -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="0.4" z="1.3" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="-0.3" z="1.3" rotation_x="-45.0" rotation_y="-90.0" rotation_z="-90.0"/> -->
+            <!-- Home -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.13" y="-0.32" z="1.0" rotation_x="90.0" rotation_y="-90.0" rotation_z="90.0"/> -->
+            <!-- Right Out -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.4" y="-0.6" z="1.1" rotation_x="90.0" rotation_y="-90.0" rotation_z="90.0"/> -->
+            <!-- Turn Left -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.3" y="-0.5" z="0.75" rotation_x="90.0" rotation_y="-90.0" rotation_z="180.0"/> -->
+            <!-- Pre Place -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.339" y="-0.089" z="0.69" rotation_x="90.0" rotation_y="-90.0" rotation_z="180.0"/> -->
+            <!-- Place -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.339" y="-0.089" z="0.56" rotation_x="90.0" rotation_y="-90.0" rotation_z="180.0"/> -->
+            <!-- Place Out -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.339" y="-0.22" z="0.56" rotation_x="90.0" rotation_y="-90.0" rotation_z="180.0"/> -->
+            <!-- Right Out -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.3" y="-0.55" z="1.0" rotation_x="90.0" rotation_y="-90" rotation_z="90.0"/> -->
+            <!-- Home -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.13" y="-0.32" z="1.0" rotation_x="90.0" rotation_y="-90.0" rotation_z="90.0"/> -->
+            <!-- ################ END Place Box on Robot #################### -->
+
+            <!-- #################### Storage 19 Pick-Up #################### -->            
+            <!-- Pre Home in front of robot -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="-0.3" z="1.3" rotation_x="-45.0" rotation_y="-90.0" rotation_z="-90.0"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="0.4" z="1.3" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Move arm to Home -->
+            <!-- TODO Change to MoveToJoint -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Drive in front of rack -->
+            <!-- <Action ID="BaseMovement" x="0.3" y="0.05" quaternion_x="0" quaternion_y="0" quaternion_z="-0.679068928994617" quaternion_w="0.7340745123446963"/> -->
+            <!-- Move arm in camera pose -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.03" y="0.55" z="1.2" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            
+            <!-- <RetryUntilSuccessful num_attempts="1"> -->
+                <!-- <Sequence> -->
+                    <!-- Calculate marker position -->
+                    <!-- <Wait seconds="1"/> -->
+                    <!-- <Action ID="GetBoxPickPosition" marker_frame="marker_1" x="{x}" y="{y}" z="{z}" rotation_x="{rotation_x}" rotation_y="{rotation_y}" rotation_z="{rotation_z}"/> -->
+                <!-- </Sequence> -->
+            <!-- </RetryUntilSuccessful> -->
+
+            <!-- Move 20 cm in front of box -->
+            <!-- <Action ID="CalculateOffsets" offset_x="-0.05" offset_y="-0.10" offset_z="-0.11"  x="{x}" y="{y}" z="{z}" out_x="{out_x}" out_y="{out_y}" out_z="{out_z}"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="{out_x}" y="0.6" z="{out_z}" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Prepick -->
+            <!-- <Action ID="CalculateOffsets" offset_x="-0.05" offset_y="0.04" offset_z="-0.11"  x="{x}" y="{y}" z="{z}" out_x="{out_x}" out_y="{out_y}" out_z="{out_z}"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="{out_x}" y="{out_y}" z="{out_z}" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Pick -->
+            <!-- <Action ID="SoundPlay" file_name="Rittersport.wav"/> -->
+            <!-- <Action ID="CalculateOffsets" offset_x="-0.05" offset_y="0.04" offset_z="0.02"  x="{x}" y="{y}" z="{z}" out_x="{out_x}" out_y="{out_y}" out_z="{out_z}"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="{out_x}" y="{out_y}" z="{out_z}" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Move Out -->
+            <!-- <Action ID="CalculateOffsets" offset_x="-0.05" offset_y="-0.20" offset_z="0.02"  x="{x}" y="{y}" z="{z}" out_x="{out_x}" out_y="{out_y}" out_z="{out_z}"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="{out_x}" y="{out_y}" z="{out_z}" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Home -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/>             -->
+            <!-- #################### END Storage 19 Pick-Up #################### -->
+
+            <!-- #################### Pick Box from Robot #################### -->
+            <!-- Move to second table -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.13" y="-0.32" z="1.0" rotation_x="90.0" rotation_y="-90.0" rotation_z="90.0"/>
+            <Action ID="SoundPlay" file_name="They_see_me_rollin.wav"/>
+            <!-- <Action ID="BaseMovement" x="-4.314" y="6.369" quaternion_x="0.0" quaternion_y="0.0" quaternion_z="-0.4820723" quaternion_w="0.8761314"/> -->
+            <Action ID="BaseMovement" x="-4.379" y="3.554" quaternion_x="0.0" quaternion_y="0.0" quaternion_z="0.8626529" quaternion_w="0.5057965"/>
+            <!-- Home Left of Robot -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Pre Home in front of robot -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="0.4" z="1.3" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="-0.3" z="1.3" rotation_x="-45.0" rotation_y="-90.0" rotation_z="-90.0"/> -->
+            <!-- Home -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.13" y="-0.32" z="1.0" rotation_x="90.0" rotation_y="-90.0" rotation_z="90.0"/>
+            <!-- Right Out -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.4" y="-0.5" z="1.1" rotation_x="90.0" rotation_y="-90.0" rotation_z="90.0"/>
+            <!-- Turn Left -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.3" y="-0.5" z="0.75" rotation_x="90.0" rotation_y="-90.0" rotation_z="180.0"/>
+            <!-- Pre Pick -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.330" y="-0.22" z="0.56" rotation_x="90.0" rotation_y="-90.0" rotation_z="180.0"/>
+            <!-- Move In -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.330" y="-0.089" z="0.56" rotation_x="90.0" rotation_y="-90.0" rotation_z="180.0"/>
+            <!-- Pick -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.330" y="-0.089" z="0.69" rotation_x="90.0" rotation_y="-90.0" rotation_z="180.0"/>
+            <!-- Post Pick -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.339" y="-0.22" z="0.69" rotation_x="90.0" rotation_y="-90.0" rotation_z="180.0"/>
+            <!-- Right Out -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.3" y="-0.55" z="1.0" rotation_x="90.0" rotation_y="-90" rotation_z="90.0"/>
+            <!-- Home -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.13" y="-0.32" z="1.0" rotation_x="90.0" rotation_y="-90.0" rotation_z="90.0"/>
+            <!-- ################ END Pick Box from Robot #################### -->
+
+            <!-- #################### Place Box on Table #################### -->
+            <!-- Pre Home in front of robot -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="-0.3" z="1.3" rotation_x="-45.0" rotation_y="-90.0" rotation_z="-90.0"/>
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="0.4" z="1.3" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/>
+            <!-- Move arm to Home -->
+            <!-- TODO Change to MoveToJoint -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/>
+            <!-- Drive in Table -->
+            <!-- <Action ID="SoundPlay" file_name="They_see_me_rollin.wav"/> -->
+            <!-- <Action ID="BaseMovement" x="-4.379" y="3.554" quaternion_x="0.0" quaternion_y="0.0" quaternion_z="0.8626529" quaternion_w="0.5057965"/> -->
+            <!-- Pre Place -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.007" y="0.8" z="1.2" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/>
+            <!-- Place -->
+            <Action ID="SoundPlay" file_name="Rittersport.wav"/>
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.007" y="0.8" z="1.05" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/>
+            <!-- Post Place -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.007" y="0.55" z="1.05" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/>
+            <!-- Home -->
+            <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/>
+            <!-- #################### END Place Box on Table #################### -->
+
+           
+            
+            <!-- #################### Place Box on Table #################### -->
+            <!-- Pre Home in front of robot -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="-0.3" z="1.35" rotation_x="-45.0" rotation_y="-90.0" rotation_z="-90.0"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.35" y="0.4" z="1.35" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Move arm to Home -->
+            <!-- TODO Change to MoveToJoint -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.35" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Pre Place -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.007" y="0.72" z="1.35" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Place -->
+            <!-- <Action ID="SoundPlay" file_name="Maoam.wav"/> -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.007" y="0.72" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Post Place -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="0.007" y="0.55" z="1.15" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- Home -->
+            <!-- <Action ID="ArmMovementMoveIt" speed="0.3" cart="True" x="-0.02" y="0.3" z="1.25" rotation_x="-90.0" rotation_y="-90.0" rotation_z="0.0"/> -->
+            <!-- #################### END Place Box on Table #################### -->
+
+
+        </Sequence>
+    </BehaviorTree>
+
+    <TreeNodesModel>
+        <Condition ID="CheckBoxGrabbed"/>
+        <Action ID="BaseMovement">
+            <input_port name="x" type="float"/>
+            <input_port name="y" type="float"/>
+            <input_port name="quaternion_x" type="float"/>
+            <input_port name="quaternion_y" type="float"/>
+            <input_port name="quaternion_z" type="float"/>
+            <input_port name="quaternion_w" type="float"/>
+        </Action>
+        <Action ID="SoundPlay">
+            <input_port name="file_name" type="std::string"/>
+        </Action>
+        <Action ID="GetBoxPickPosition">
+            <input_port name="marker_frame" type="std::string"/>
+            <output_port name="x" type="float"/>
+            <output_port name="y" type="float"/>
+            <output_port name="z" type="float"/>
+            <input_port name="quaternion_x" type="float"/>
+            <input_port name="quaternion_y" type="float"/>
+            <input_port name="quaternion_z" type="float"/>
+            <input_port name="quaternion_w" type="float"/>
+        </Action>
+        <Action ID="ArmMovementMoveIt">
+            <input_port name="x" type="float"/>
+            <input_port name="y" type="float"/>
+            <input_port name="z" type="float"/>
+            <input_port name="rotation_x" type="float"/>
+            <input_port name="rotation_y" type="float"/>
+            <input_port name="rotation_z" type="float"/>
+            <input_port name="speed" type="float"/>
+            <input_port name="cart" type="bool"/>
+        </Action>
+    </TreeNodesModel>
+</root>

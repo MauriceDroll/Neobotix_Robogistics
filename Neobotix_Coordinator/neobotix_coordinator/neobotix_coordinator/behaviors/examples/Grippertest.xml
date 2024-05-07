@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Repeat num_cycles="1">
+            <Sequence>
+                <Action ID="MoveArmToPose" cartesian="True" q_w="1" q_x="0" q_y="0" q_z="0" x="0.74" y="1" z="1.6"/>
+                <Action ID="Wait" seconds="15"/>
+                <Action ID="MoveArmToPose" cartesian="True" q_w="0.999474" q_x="0.0219011" q_y="-0.000240945" q_z="-0.0238969" x="1.02052" y="0.76724" z="1.46611"/>
+                <Action ID="Wait" seconds="10"/>
+                <Action ID="CloseGripper" cylinder_ids="1,2"/>
+                <Action ID="MoveArmToPose" cartesian="True" q_w="0.707183" q_x="0.0177831" q_y="0.012476" q_z="0.706697" x="0.626063" y="1.44669" z="1.44798"/>    
+                <Action ID="Wait" seconds="15"/>
+                <Action ID="OpenGripper" cylinder_ids="1,2"/>
+                <Action ID="MoveArmToPose" cartesian="True" q_w="1" q_x="0.00058" q_y="0.003" q_z="-0.009" x="0.982005" y="0.818401" z="1.45209"/>
+                <Action ID="Wait" seconds="10"/>
+                <Action ID="CloseGripper" cylinder_ids="3"/>
+                <Action ID="MoveArmToPose" cartesian="True" q_w="0.705184" q_x="0.0176573" q_y="0.0127606" q_z="0.70869" x="0.552307" y="1.67659" z="1.42933"/>
+                <Action ID="Wait" seconds="15"/>
+                <Action ID="OpenGripper" cylinder_ids="3"/>
+                <Action ID="MoveArmToPose" cartesian="True" q_w="1" q_x="0" q_y="0" q_z="0" x="0.74" y="1" z="1.6"/>
+
+            </Sequence>
+        </Repeat>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Action ID="CloseGripper">
+            <input_port name="cylinder_ids" type="std::vector&lt;int, std::allocator&lt;int&gt; &gt;"/>
+        </Action>
+        <Action ID="MoveArmToPose">
+            <input_port name="cartesian" type="bool"/>
+            <input_port name="q_w" type="float"/>
+            <input_port name="q_x" type="float"/>
+            <input_port name="q_y" type="float"/>
+            <input_port name="q_z" type="float"/>
+            <input_port name="x" type="float"/>
+            <input_port name="y" type="float"/>
+            <input_port name="z" type="float"/>
+        </Action>
+        <Action ID="OpenGripper">
+            <input_port name="cylinder_ids" type="std::vector&lt;int, std::allocator&lt;int&gt; &gt;"/>
+        </Action>
+        <Action ID="Wait">
+            <input_port name="seconds" type="int"/>
+        </Action>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>

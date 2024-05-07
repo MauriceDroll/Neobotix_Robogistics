@@ -1,0 +1,44 @@
+<root main_tree_to_execute = "MaterialTransport">
+    <BehaviorTree ID="MaterialTransport">
+        <Sequence>
+            <RetryUntilSuccesful num_attempts="1000">
+                <Sequence>
+                    <Wait seconds="1"/>
+                    <GetTransportData transport_id="{transport_id}" status="{status}" mode="{mode}" platform_nr="{platform_nr}" start_x="{start_x}" start_y="{start_y}" start_quaternion_x="{start_quaternion_x}" start_quaternion_y="{start_quaternion_y}" start_quaternion_z="{start_quaternion_z}" start_quaternion_w="{start_quaternion_w}" start_floor="{start_floor}" goal_x="{goal_x}" goal_y="{goal_y}" goal_quaternion_x="{goal_quaternion_x}" goal_quaternion_y="{goal_quaternion_y}" goal_quaternion_z="{goal_quaternion_z}" goal_quaternion_w="{goal_quaternion_w}" goal_floor="{goal_floor}"/>
+                    <!-- <Wait seconds="1"/> -->
+                </Sequence>
+            </RetryUntilSuccesful>
+
+            <UpdateTransportData transport_id="{transport_id}" status="1"/>
+
+            <Wait seconds="3"/>
+
+            <Repeat num_cycles="3">
+                <PtuMovement pan_angle="0" tilt_angle="0"/>
+            </Repeat>
+
+            <!-- Look at box position -->
+            <!-- <BaseMovement x="1.77414262295" y="0.33859822154" quaternion_x="0" quaternion_y="0" quaternion_z="-0.9848078569238891" quaternion_w="0.17364758835347227"/> -->
+            
+            <!-- Pick up box position -->
+            <BaseMovement x="{start_x}" y="{start_y}" quaternion_x="{start_quaternion_x}" quaternion_y="{start_quaternion_y}" quaternion_z="{start_quaternion_z}" quaternion_w="{start_quaternion_w}"/>
+            <!-- <BaseMovement x="1.86637818813" y="1.07947170734" quaternion_x="0" quaternion_y="0" quaternion_z="-0.5150382736715008" quaternion_w="0.857167181274155"/> -->
+            
+            <PtuMovement pan_angle="-90" tilt_angle="-35"/>
+
+            <!-- <GetBoxPickPosition x="{box_x}" y="{box_y}" quaternion_x="{box_quaternion_x}" quaternion_y="{box_quaternion_y}" quaternion_z="{box_quaternion_z}" quaternion_w="{box_quaternion_w}"/> -->
+            <!-- <BaseMovement x="{box_x}" y="{box_y}" quaternion_x="{box_quaternion_x}" quaternion_y="{box_quaternion_y}" quaternion_z="{box_quaternion_z}" quaternion_w="{box_quaternion_w}"/> -->
+                
+            <PickUpBox/>
+
+            <!-- Place box position -->
+            <BaseMovement x="{goal_x}" y="{goal_y}" quaternion_x="{goal_quaternion_x}" quaternion_y="{goal_quaternion_y}" quaternion_z="{goal_quaternion_z}" quaternion_w="{goal_quaternion_w}"/>
+            <!-- <BaseMovement x="-0.0714939981699" y="-3.74430155754" quaternion_x="0" quaternion_y="0" quaternion_z="-0.953717113822078" quaternion_w="0.3007052822996055"/> -->
+
+            <PlaceBox/>
+            
+            <UpdateTransportData transport_id="{transport_id}" status="2" platform_nr="5"/>
+            
+        </Sequence>
+    </BehaviorTree>
+</root>

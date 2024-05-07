@@ -1,0 +1,4 @@
+[submodule "iras_interfaces"]
+	path = iras_interfaces
+	url = git@github.com:IRAS-HKA/iras_interfaces.git
+	branch = aip

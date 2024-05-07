@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Repeat num_cycles="1">
+            <Sequence>
+                <Action ID="OpenGripper" cylinder_ids="1"/>
+                <Action ID="Wait" seconds="2"/>
+                <Action ID="CloseGripper" cylinder_ids="1"/>
+                <Action ID="OpenGripper" cylinder_ids="1,2"/>
+                <Action ID="Wait" seconds="2"/>
+                <Action ID="CloseGripper" cylinder_ids="1,2"/>
+                <Action ID="OpenGripper" cylinder_ids="1,2,3"/>
+                <Action ID="Wait" seconds="2"/>
+                <Action ID="CloseGripper" cylinder_ids="1,2,3"/>
+                <Action ID="OpenGripper" cylinder_ids="1,2,3,4"/>
+                <Action ID="Wait" seconds="2"/>
+                <Action ID="CloseGripper" cylinder_ids="1,2,3,4"/>
+            </Sequence>
+        </Repeat>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Action ID="CloseGripper">
+            <input_port name="cylinder_ids" type="std::vector&lt;int, std::allocator&lt;int&gt; &gt;"/>
+        </Action>
+        <Action ID="OpenGripper">
+            <input_port name="cylinder_ids" type="std::vector&lt;int, std::allocator&lt;int&gt; &gt;"/>
+        </Action>
+        <Action ID="Wait">
+            <input_port name="seconds" type="int"/>
+        </Action>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>

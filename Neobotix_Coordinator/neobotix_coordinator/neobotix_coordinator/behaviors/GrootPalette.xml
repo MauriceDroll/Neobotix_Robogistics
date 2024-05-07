@@ -1,0 +1,150 @@
+<root>
+    <TreeNodesModel>
+        <Action ID="GetMarkerPosition">
+            <output_port name="y" type="float"/>
+            <output_port name="rotation_y" type="float"/>
+            <output_port name="x" type="float"/>
+            <output_port name="rotation_z" type="float"/>
+            <input_port name="base_frame" type="std::string"/>
+            <input_port name="max_seconds" type="int"/>
+            <output_port name="rotation_x" type="float"/>
+            <output_port name="z" type="float"/>
+            <input_port name="marker_frame" type="std::string"/>
+        </Action>
+        <Action ID="MoveBase">
+            <input_port name="quaternion_z" type="float"/>
+            <input_port name="quaternion_y" type="float"/>
+            <input_port name="quaternion_w" type="float"/>
+            <input_port name="quaternion_x" type="float"/>
+            <input_port name="y" type="float"/>
+            <input_port name="x" type="float"/>
+            <input_port name="frame_id" type="std::string"/>
+        </Action>
+        <Action ID="IntParameterRequest">
+            <input_port name="max" type="std::string"/>
+            <input_port name="min" type="std::string"/>
+            <input_port name="key" type="std::string"/>
+            <input_port name="options" type="std::string"/>
+            <input_port name="msg" type="std::string"/>
+            <input_port name="default_value" type="std::string"/>
+            <input_port name="title" type="std::string"/>
+            <output_port name="value" type="int"/>
+        </Action>
+        <Action ID="BoolParameterRequest">
+            <input_port name="max" type="std::string"/>
+            <input_port name="min" type="std::string"/>
+            <input_port name="key" type="std::string"/>
+            <input_port name="options" type="std::string"/>
+            <input_port name="msg" type="std::string"/>
+            <input_port name="default_value" type="std::string"/>
+            <input_port name="title" type="std::string"/>
+            <output_port name="value" type="bool"/>
+        </Action>
+        <Action ID="StringParameterRequest">
+            <input_port name="max" type="std::string"/>
+            <input_port name="min" type="std::string"/>
+            <input_port name="key" type="std::string"/>
+            <input_port name="options" type="std::string"/>
+            <input_port name="msg" type="std::string"/>
+            <input_port name="default_value" type="std::string"/>
+            <input_port name="title" type="std::string"/>
+            <output_port name="value" type="std::string"/>
+        </Action>
+        <Condition ID="CheckBlackboardInt">
+            <input_port name="compare_to" type="int"/>
+            <input_port name="input" type="int"/>
+        </Condition>
+        <Action ID="MoveArm">
+            <input_port name="cartesian" type="bool"/>
+            <input_port name="rotation_z" type="float"/>
+            <input_port name="rotation_x" type="float"/>
+            <input_port name="z" type="float"/>
+            <input_port name="speed" type="float"/>
+            <input_port name="y" type="float"/>
+            <input_port name="rotation_y" type="float"/>
+            <input_port name="x" type="float"/>
+        </Action>
+        <Condition ID="CheckDiagnosticStatus"/>
+        <Condition ID="CheckBattery">
+            <input_port name="battery_level" type="float"/>
+        </Condition>
+        <Action ID="MoveArmToJoints">
+            <input_port name="joint6" type="float"/>
+            <input_port name="joint5" type="float"/>
+            <input_port name="joint3" type="float"/>
+            <input_port name="joint2" type="float"/>
+            <input_port name="joint4" type="float"/>
+            <input_port name="joint1" type="float"/>
+        </Action>
+        <Action ID="CloseGripper">
+            <input_port name="cylinder_ids" type="undefined"/>
+        </Action>
+        <Action ID="FloatParameterRequest">
+            <input_port name="max" type="std::string"/>
+            <input_port name="min" type="std::string"/>
+            <input_port name="key" type="std::string"/>
+            <input_port name="options" type="std::string"/>
+            <input_port name="msg" type="std::string"/>
+            <input_port name="default_value" type="std::string"/>
+            <input_port name="title" type="std::string"/>
+            <output_port name="value" type="float"/>
+        </Action>
+        <Condition ID="CheckStop"/>
+        <Action ID="OpenGripper">
+            <input_port name="cylinder_ids" type="undefined"/>
+        </Action>
+        <Action ID="DetectObject">
+            <output_port name="probability" type="float"/>
+            <output_port name="z" type="float"/>
+            <output_port name="y" type="float"/>
+            <input_port name="camera_type" type="std::string"/>
+            <input_port name="base_frame" type="std::string"/>
+            <output_port name="x" type="float"/>
+            <input_port name="class_name" type="std::string"/>
+        </Action>
+        <Action ID="ClearLocalCostmap"/>
+        <Action ID="MoveArmToPose">
+            <input_port name="cartesian" type="bool"/>
+            <input_port name="q_z" type="float"/>
+            <input_port name="q_x" type="float"/>
+            <input_port name="z" type="float"/>
+            <input_port name="q_w" type="float"/>
+            <input_port name="q_y" type="float"/>
+            <input_port name="y" type="float"/>
+            <input_port name="x" type="float"/>
+        </Action>
+        <Action ID="ClearGlobalCostmap"/>
+        <Action ID="Wait">
+            <input_port name="seconds" type="int"/>
+        </Action>
+        <Action ID="CalculateOffsets">
+            <input_port name="max_seconds" type="int"/>
+            <output_port name="out_qy" type="float"/>
+            <input_port name="offset_z" type="float"/>
+            <input_port name="offset_y" type="float"/>
+            <output_port name="out_y" type="float"/>
+            <output_port name="out_z" type="float"/>
+            <output_port name="out_qw" type="float"/>
+            <input_port name="offset_x" type="float"/>
+            <input_port name="offset_frame" type="std::string"/>
+            <output_port name="out_qx" type="float"/>
+            <output_port name="out_qz" type="float"/>
+            <input_port name="base_frame" type="std::string"/>
+            <output_port name="out_x" type="float"/>
+            <input_port name="marker_frame" type="std::string"/>
+        </Action>
+        <Condition ID="CheckBlackboard">
+            <input_port name="compare_to" type="std::string"/>
+            <input_port name="input" type="std::string"/>
+        </Condition>
+        <Action ID="SetInitialPose">
+            <input_port name="quaternion_z" type="float"/>
+            <input_port name="quaternion_y" type="float"/>
+            <input_port name="quaternion_w" type="float"/>
+            <input_port name="quaternion_x" type="float"/>
+            <input_port name="z" type="float"/>
+            <input_port name="y" type="float"/>
+            <input_port name="x" type="float"/>
+        </Action>
+    </TreeNodesModel>
+</root>

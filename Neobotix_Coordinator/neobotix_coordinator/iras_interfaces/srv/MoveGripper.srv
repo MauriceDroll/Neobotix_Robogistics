@@ -1,0 +1,4 @@
+int32[] cylinder_ids # number of cylinder as written on hardware
+---
+bool success   # indicate successful run of triggered service
+string message # informational, e.g. for error messages

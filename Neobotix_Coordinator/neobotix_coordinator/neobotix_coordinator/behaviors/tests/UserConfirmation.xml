@@ -1,0 +1,8 @@
+<root main_tree_to_execute = "UserConfirmation">
+    <BehaviorTree ID="UserConfirmation">
+        <Sequence>
+            <StringParameterRequest title="Do you want to proceed?" msg="type [y] or [n]" value="{confirm}"/>
+            <CheckBlackboard input="{confirm}" compare_to="y" />
+        </Sequence>
+    </BehaviorTree>
+</root>

@@ -1,0 +1,4 @@
+Coordinator:
+  ros__parameters:
+    main_tree_path: "/home/docker/ros2_ws/src/neobotix_coordinator/behaviors/examples/AIPDemo_Bosch_25_vel.xml"
+    groot_palette_path: "/home/docker/ros2_ws/src/neobotix_coordinator/behaviors/GrootPalette.xml"

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+    <name>neobotix_coordinator</name>
+    <version>1.1.0</version>
+    <description> This package provides the task coordinator for IRAS. It uses the BehaviorTree.CPP framework for abstract planning. </description>
+    <maintainer email="andreas.zachariae@gmail.com">Andreas Zachariae</maintainer>
+    <license>TODO</license>
+    <author>Andreas Zachariae</author>
+    <author>Moritz Weisenböhler</author>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+    <buildtool_depend>ament_index_cpp</buildtool_depend>
+
+    <depend>rclcpp</depend>
+    <depend>rclcpp_action</depend>
+    <depend>iras_behaviortree_ros2</depend>
+    <depend>iras_interfaces</depend>
+    <depend>tf2_ros</depend>
+    <depend>tf2_geometry_msgs</depend>
+    <depend>geometry2</depend>
+    <depend>nav2_msgs</depend>
+    <depend>std_srvs</depend>
+    <!-- <depend>object_detector_tensorflow_interfaces</depend> -->
+
+    <test_depend>ament_lint_auto</test_depend>
+    <test_depend>ament_lint_common</test_depend>
+
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+
+</package>

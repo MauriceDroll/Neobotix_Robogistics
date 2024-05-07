@@ -1,0 +1,12 @@
+<root main_tree_to_execute = "NavigationDemo">
+    <BehaviorTree ID="NavigationDemo">
+        <!-- <Repeat num_cycles="100"> -->
+        <Sequence>
+            <MoveBase x="-0.5" y="-0.5"/>
+            <!-- <MoveBase x="0.5" y="0.5"/> -->
+            <!-- <MoveBase x="-0.5" y="0.5"/> -->
+            <MoveBase x="-2" y="-0.5"/>
+        </Sequence>
+        <!-- </Repeat> -->
+    </BehaviorTree>
+</root>

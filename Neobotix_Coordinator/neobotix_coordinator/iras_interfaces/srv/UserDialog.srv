@@ -1,0 +1,16 @@
+# request
+string title
+# message to display on the screen
+string msg
+
+byte NORMAL = 0
+byte HIGH = 1
+byte CRITICAL = 2
+byte importance
+
+# keys to display for each input
+DialogDataType[] data_keys
+---
+# response
+# stores the input values for each key
+string[] data_values

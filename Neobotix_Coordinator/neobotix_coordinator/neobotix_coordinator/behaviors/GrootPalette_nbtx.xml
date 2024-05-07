@@ -1,0 +1,112 @@
+<root>
+    <!-- <include path="applications/FreeWalking.xml"/>
+    <include path="applications/GuidedWalking.xml"/>
+    <include path="applications/Recharge.xml"/>
+    <include path="applications/TransportWithDevice.xml"/>
+    <include path="applications/DriveToGoal.xml"/>
+
+    <include path="services/Emergency.xml"/>
+    <include path="services/BaseMovementWithRequest.xml"/>
+    <include path="services/ArmMovementWithRequest.xml"/>
+    <include path="services/BatteryChargingWithRequest.xml"/>
+    <include path="services/DevicePairingWithRequest.xml"/>
+    <include path="services/UserAuthenticationWithRequest.xml"/>
+    <include path="services/PatientAuthentication.xml"/> -->
+    
+    <TreeNodesModel>
+        <!-- <SubTree ID="BaseMovementWithRequest"/>
+        <SubTree ID="ArmMovementWithRequest"/>
+        <SubTree ID="BatteryChargingWithRequest"/>
+        <SubTree ID="DevicePairingWithRequest"/>
+        <SubTree ID="FreeWalking"/>
+        <SubTree ID="GuidedWalking"/>
+        <SubTree ID="TransportWithDevice"/>
+        <SubTree ID="Emergency"/>
+        <SubTree ID="Recharge"/>
+        <SubTree ID="UserAuthenticationWithRequest"/>
+        <SubTree ID="PatientAuthentication"/>
+        <SubTree ID="DriveToGoal"/> -->
+
+        <Condition ID="CheckStop"/>
+        <Condition ID="CheckBattery"/>
+        <Condition ID="CheckDiagnosticStatus"/>
+        <Condition ID="CheckPatientCondition"/>
+        <Condition ID="CheckBlackboard">
+            <input_port name="input" type="std::string"/>
+            <input_port name="compare_to" type="std::string"/>
+        </Condition>
+        <Condition ID="CheckBoxGrabbed"/>
+
+        <Decorator ID="BehaviorSwitch"/>
+
+        <Action ID="UserAuthentication">
+            <input_port name="required_user_level" type="int"/>
+            <output_port name="access" type="std::string"/>
+        </Action>
+        <Action ID="DevicePairing">
+            <input_port name="pairing_mode" type="int"/>
+            <input_port name="device_type" type="int"/>
+        </Action>
+        <Action ID="ArmMovement">
+            <input_port name="x" type="float"/>
+            <input_port name="y" type="float"/>
+            <input_port name="z" type="float"/>
+            <input_port name="gripper" type="float"/>
+        </Action>
+        <Action ID="BatteryCharging">
+            <input_port name="goal_percentage" type="float"/>
+        </Action>
+        <Action ID="BaseMovement">
+            <input_port name="x" type="float"/>
+            <input_port name="y" type="float"/>
+            <input_port name="quaternion_x" type="float"/>
+            <input_port name="quaternion_y" type="float"/>
+            <input_port name="quaternion_z" type="float"/>
+            <input_port name="quaternion_w" type="float"/>
+        </Action>
+        <Action ID="GetBoxPickPosition">
+            <input_port name="marker_frame" type="std::string"/>
+            <output_port name="x" type="float"/>
+            <output_port name="y" type="float"/>
+            <output_port name="z" type="float"/>
+            <output_port name="quaternion_x" type="float"/>
+            <output_port name="quaternion_y" type="float"/>
+            <output_port name="quaternion_z" type="float"/>
+            <output_port name="quaternion_w" type="float"/>
+        </Action>
+        <Action ID="StringParameterRequest">
+            <output_port name="value" type="std::string"/>
+            <input_port name="title" type="std::string"/>
+            <input_port name="msg" type="std::string"/>
+            <input_port name="key" type="std::string"/>
+            <input_port name="min" type="std::string"/>
+            <input_port name="max" type="std::string"/>
+            <input_port name="default_value" type="std::string"/>
+            <input_port name="options" type="std::string"/>
+        </Action>
+        <Action ID="FloatParameterRequest">
+            <output_port name="value" type="float"/>
+            <input_port name="title" type="std::string"/>
+            <input_port name="msg" type="std::string"/>
+            <input_port name="key" type="std::string"/>
+            <input_port name="min" type="std::string"/>
+            <input_port name="max" type="std::string"/>
+            <input_port name="default_value" type="std::string"/>
+            <input_port name="options" type="std::string"/>
+        </Action>
+        <Action ID="IntParameterRequest">
+            <output_port name="value" type="int"/>
+            <input_port name="title" type="std::string"/>
+            <input_port name="msg" type="std::string"/>
+            <input_port name="key" type="std::string"/>
+            <input_port name="min" type="std::string"/>
+            <input_port name="max" type="std::string"/>
+            <input_port name="default_value" type="std::string"/>
+            <input_port name="options" type="std::string"/>
+        </Action>
+        <Action ID="AlwaysFailureNode"/>
+        <Action ID="RetryNode">
+            <input_port name="num_attempts" type="int"/>
+        </Action>
+    </TreeNodesModel>
+ </root>

@@ -1,0 +1,9 @@
+geometry_msgs/PoseStamped   pose
+bool                        cart
+float32                     speed
+---
+int32                       err_code
+string                      msg
+float64                     exec_time
+---
+int32                       status_code

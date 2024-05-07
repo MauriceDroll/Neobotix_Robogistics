@@ -1,0 +1,11 @@
+<root main_tree_to_execute = "DriveToGoal">
+    <BehaviorTree ID="DriveToGoal">
+        <Sequence>
+            <GetTransportData transport_id="{transport_id}" status="{status}" mode="{mode}" platform_nr="{platform_nr}" start_x="{start_x}" start_y="{start_y}" start_floor="{start_floor}" goal_x="{goal_x}" goal_y="{goal_y}" goal_floor="{goal_floor}"/>
+            <UpdateTransportData transport_id="{transport_id}" status="1"/>
+            <BaseMovement x="{start_x}" y="{start_y}"/>
+            <BaseMovement x="{goal_x}" y="{goal_y}"/>
+            <UpdateTransportData transport_id="{transport_id}" status="2" platform_nr="5"/>
+        </Sequence>
+    </BehaviorTree>
+</root>

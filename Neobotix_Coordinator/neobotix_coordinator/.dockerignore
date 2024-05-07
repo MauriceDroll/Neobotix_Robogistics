@@ -1,0 +1,9 @@
+# Ignore Git files
+.git
+.gitignore
+.gitmodules
+
+# Ignore default files
+.DS_Store
+.idea
+# .vscode
